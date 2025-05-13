@@ -16,14 +16,14 @@ To make things a bit more fun, each TA added a link to song/video we would like 
 
 Tell us a bit about yourselves! 
 
-	- First student's name:
-	- Favorite singer:
-	- Favorite song:
-	- Desirable grade in Matam:
-	- which TA's song you liked the most:
+	- First student's name:Ibrahem Akarya
+	- Favorite singer:pitbul
+	- Favorite song:rain over me
+	- Desirable grade in Matam:100
+	- which TA's song you liked the most:Baraa
 
-	- Second student's name:
-	- Favorite singer:
-	- Favorite song:
-	- Desirable grade in Matam:
-	- which TA's song you liked the most: 
+	- Second student's name: Mohammad
+	- Favorite singer: Future
+	- Favorite song: those eyes
+	- Desirable grade in Matam: 99
+	- which TA's song you liked the most: Baraa
