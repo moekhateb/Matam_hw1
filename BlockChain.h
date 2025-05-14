@@ -20,7 +20,7 @@ typedef unsigned int (*updateFunction)(unsigned int);
  *
 */
 struct BlockChain {
-    const BlockChain* next = nullptr;
+    BlockChain* next = nullptr;
     const Transaction transaction ;
     const string timestamp ;
     BlockChain(const BlockChain* next, const Transaction& transaction, const string& timestamp):

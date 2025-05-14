@@ -96,9 +96,34 @@ void BlockChainAppendTransaction(
  * @return BlockChain created from the file
  *
 */
-BlockChain BlockChainLoad(ifstream& file);
-
-
+BlockChain BlockChainLoad(ifstream& file){
+BlockChain newblock;
+string sender,receiver,timestamp;
+int value;
+file >> sender;
+file >> receiver;
+file >> value;
+file >> timestamp;
+Transaction newtrans;
+newtrans.value=value;
+newtrans.sender=sender;
+newtrans.receiver=receiver;
+BlockChain frstblock(newtrans,timestamp);
+BlockChain* ptr=&frstblock;
+while(!file.eof()){
+  file >> sender;
+  file >> receiver;
+  file >> value;
+  file >> timestamp;
+  Transaction newtrans;
+  newtrans.value=value;
+    newtrans.sender=sender;
+    newtrans.receiver=receiver;
+    BlockChain block(newtrans,timestamp);
+    ptr->next=block;
+    ptr=ptr->next;
+  }
+}
 /**
  * BlockChainDump - Prints the data of all transactions in the BlockChain to a given file
  *
