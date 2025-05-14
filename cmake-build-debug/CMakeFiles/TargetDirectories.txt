@@ -1,0 +1,3 @@
+/Users/mohammadkhatib/Desktop/new try at matam/Matam_hw1/cmake-build-debug/CMakeFiles/Matam_hw1.dir
+/Users/mohammadkhatib/Desktop/new try at matam/Matam_hw1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mohammadkhatib/Desktop/new try at matam/Matam_hw1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

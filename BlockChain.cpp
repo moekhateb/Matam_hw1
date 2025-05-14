@@ -1,40 +1,22 @@
-
-#pragma once
-
 #include <string>
 #include <fstream>
 
 #include "Transaction.h"
+#include "BlockChain.h"
 
 using std::string;
 using std::ifstream;
 using std::ofstream;
 
-
-typedef unsigned int (*updateFunction)(unsigned int);
-
-
-/**
-*
- * BlockChain - Defining the new BlockChain Type
- *
-*/
-struct BlockChain {
-    BlockChain* next = nullptr;
-    Transaction transaction = 0;
-    string timestamp = 0;
-
-};
-
-
-/**
- * BlockChainGetSize - returns the number of Blocks in the BlockChain
- *
- * @param blockChain - BlockChain to measure
- *
- * @return Number of Blocks in the BlockChain
-*/
-int BlockChainGetSize(const BlockChain& blockChain);
+int BlockChainGetSize(const BlockChain& blockChain){
+    int counter =0;
+    const BlockChain* ptr = &blockChain;
+    while ( ptr!= nullptr){
+        counter++;
+        ptr=ptr->next;
+    }
+    return counter;
+}
 
 
 /**
@@ -45,7 +27,20 @@ int BlockChainGetSize(const BlockChain& blockChain);
  *
  * @return Balance of the person
 */
-int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name);
+int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name){
+    int balance =0;
+    const BlockChain* ptr = &blockChain;
+    while ( ptr!= nullptr){
+        if (ptr->transaction.sender == name){
+            balance = balance - ptr->transaction.value;
+        }
+        if (ptr->transaction.reciever == name){
+            balance += ptr->transaction.value;
+        }
+        ptr=ptr->next;
+    }
+    return balance;
+}
 
 
 /**
@@ -63,7 +58,9 @@ void BlockChainAppendTransaction(
         const string& sender,
         const string& receiver,
         const string& timestamp
-);
+){
+    
+}
 
 
 /**
