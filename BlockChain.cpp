@@ -34,7 +34,7 @@ int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name){
         if (ptr->transaction.sender == name){
             balance = balance - ptr->transaction.value;
         }
-        if (ptr->transaction.reciever == name){
+        if (ptr->transaction.receiver == name){
             balance += ptr->transaction.value;
         }
         ptr=ptr->next;
@@ -59,7 +59,14 @@ void BlockChainAppendTransaction(
         const string& receiver,
         const string& timestamp
 ){
-    
+    Transaction newtrans;
+    newtrans.value=value;
+    newtrans.sender=sender;
+    newtrans.receiver=receiver;
+    const BlockChain newblock(&blockChain,newtrans,timestamp );
+
+
+
 }
 
 
@@ -74,7 +81,11 @@ void BlockChainAppendTransaction(
         BlockChain& blockChain,
         const Transaction& transaction,
         const string& timestamp
-);
+){
+    const BlockChain newblock(&blockChain,transaction,timestamp );
+
+}
+
 
 
 /**
